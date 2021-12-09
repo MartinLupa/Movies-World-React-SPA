@@ -1,6 +1,5 @@
 import '../styles/Details.css';
-import { useState, useContext } from 'react';
-import useFetch from '../hooks/useFetch';
+import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../App';
 
 export default function Details() {
@@ -14,7 +13,12 @@ export default function Details() {
   };
 
   const URL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US`;
-  useFetch(URL, setMovieDetails);
+  useEffect(() => {
+    fetch(URL)
+      .then((response) => response.json())
+      .then((data) => setMovieDetails(data))
+      .catch((err) => err);
+  });
 
   return (
     <div className="details-container">
