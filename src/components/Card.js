@@ -27,7 +27,7 @@ export default function Card({ url, title, overview, release, id }) {
       </div>
       <div className="card-btn-container">
         <DetailsBtn movieID={movieID} setMovieID={setMovieID} id={id} />
-        {location.pathname === '/' ? (
+        {location.pathname === '/' || location.pathname === '/search' ? (
           <AddBtn movies={movies} setWatchList={setWatchList} id={id} />
         ) : null}
         {location.pathname === '/watchlist' ? (
