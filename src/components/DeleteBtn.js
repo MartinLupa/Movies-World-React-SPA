@@ -14,7 +14,7 @@ export default function DeleteBtn({ id, setWatchList, watchList }) {
         id={id}
         className="btn btn-outline-danger card-btn"
       >
-        X
+        Delete
       </button>
     </form>
   );
