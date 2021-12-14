@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-export default function useFetch(url, setState, parameter) {
+import { useEffect } from "react";
+export default function useFetch(url, setState, responseField) {
   return useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((data) => setState(parameter))
+      .then((data) => setState(responseField ? data[responseField] : data))
       .catch((err) => err);
-  }, [url, setState, parameter]);
+  }, [url, setState, responseField]);
 }
 
 export { useFetch };

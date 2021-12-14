@@ -1,11 +1,12 @@
-import '../styles/Main.css';
-import Card from '../components/Card';
-import { useContext, useEffect } from 'react';
-import { GlobalContext } from '../App';
+import "../styles/Main.css";
+import { BASE_URL } from "../settings";
+import Card from "../components/Card";
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "../App";
 
 export default function Main() {
   const { movies, setMovies } = useContext(GlobalContext);
-  const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&page=1`;
+  const URL = `${BASE_URL}/movie/popular?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&page=1`;
 
   useEffect(() => {
     fetch(URL)

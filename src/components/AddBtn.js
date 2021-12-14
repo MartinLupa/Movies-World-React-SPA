@@ -1,7 +1,7 @@
 export default function AddBtn({ movies, setWatchList, id }) {
   const handleAddWatchList = (e) => {
-    const toWatchMovieID = e.target.id;
-    const movieToAdd = movies.filter((movie) => movie.id == toWatchMovieID);
+    const toWatchMovieID = parseInt(e.target.id);
+    const movieToAdd = movies.filter((movie) => movie.id === toWatchMovieID);
     setWatchList((previousWatchlist) => [...previousWatchlist, movieToAdd[0]]);
   };
 

@@ -1,29 +1,27 @@
-import '../styles/Details.css';
-import { useState, useEffect, useContext } from 'react';
-import { GlobalContext } from '../App';
+import "../styles/Details.css";
+import { BASE_URL, IMG_PATH } from "../settings";
+import { useState, useContext } from "react";
+import { GlobalContext } from "../App";
+import { useFetch } from "../hooks/useFetch";
 
 export default function Details() {
   const [movieDetails, setMovieDetails] = useState([]);
   const { movieID, setWatchList, movies } = useContext(GlobalContext);
 
   const handleAddWatchList = (e) => {
-    const toWatchMovieID = e.target.id;
-    const movieToAdd = movies.filter((movie) => movie.id == toWatchMovieID);
+    const toWatchMovieID = parseInt(e.target.id);
+    console.log(typeof id, typeof toWatchMovieID);
+    const movieToAdd = movies.filter((movie) => movie.id === toWatchMovieID);
     setWatchList((previousWatchlist) => [...previousWatchlist, movieToAdd[0]]);
   };
 
-  const URL = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US`;
-  useEffect(() => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((data) => setMovieDetails(data))
-      .catch((err) => err);
-  });
+  const URL = `${BASE_URL}/movie/${movieID}?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US`;
+  useFetch(URL, setMovieDetails);
 
   return (
     <div className="details-container">
       <img
-        src={'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path}
+        src={IMG_PATH + movieDetails?.poster_path}
         className="movie-details-img"
         alt={movieDetails?.original_title}
       ></img>
@@ -36,7 +34,8 @@ export default function Details() {
         <div>
           {movieDetails.production_companies?.map((movie) => (
             <img
-              src={'https://image.tmdb.org/t/p/w500/' + movie.logo_path}
+              key={movieDetails?.id}
+              src={IMG_PATH + movie.logo_path}
               className="production-companies-logo"
               alt={movieDetails?.original_title}
             ></img>

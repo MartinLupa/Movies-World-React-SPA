@@ -1,13 +1,14 @@
-import '../styles/Search.css';
-import Card from '../components/Card';
-import { useState, useEffect } from 'react';
-import { GlobalContext } from '../App';
-import { useContext } from 'react';
+import "../styles/Search.css";
+import { BASE_URL } from "../settings";
+import Card from "../components/Card";
+import { useState, useEffect } from "react";
+import { GlobalContext } from "../App";
+import { useContext } from "react";
 
 export default function Search() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const { movies, setMovies } = useContext(GlobalContext);
-  const URL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
+  const URL = `${BASE_URL}/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
 
   const handleQueryChange = (e) => {
     e.preventDefault();
