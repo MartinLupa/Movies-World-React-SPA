@@ -1,5 +1,6 @@
 import '../styles/Navbar.css';
 import { NavLink } from 'react-router-dom';
+import UserLogIn from './UserLogIn';
 
 export default function Navbar() {
   return (
@@ -50,6 +51,7 @@ export default function Navbar() {
             </NavLink>
           </li>
         </ul>
+        <UserLogIn />
       </div>
     </nav>
   );

@@ -1,0 +1,16 @@
+@import './variables/Variables.scss';
+
+.user-login-container {
+  color: $main-text-color;
+  padding-left: 10px;
+  margin: 10px;
+  height: 30px;
+  display: flex;
+}
+
+.user-login-img {
+  margin-right: 10px;
+  width: 30px;
+  width: 30px;
+  border-radius: 50%;
+}

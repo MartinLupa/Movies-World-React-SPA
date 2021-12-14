@@ -1,0 +1,17 @@
+.user-login-container {
+  color: #e5e5e5;
+  padding-left: 10px;
+  margin: 10px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-login-img {
+  margin-right: 10px;
+  width: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=UserLogIn.css.map */
