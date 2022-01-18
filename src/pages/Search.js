@@ -1,29 +1,35 @@
-import "../styles/Search.css";
-import { BASE_URL } from "../settings";
-import Card from "../components/Card";
-import { useState, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../App";
-import { useContext } from "react";
+import Card from "../components/Card";
+import { BASE_URL } from "../settings";
+import "../styles/Search.css";
 
 export default function Search() {
   const [query, setQuery] = useState("");
+  const [searchForm, setSearchForm] = useState("");
   const { movies, setMovies } = useContext(GlobalContext);
+
   const URL = `${BASE_URL}/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
 
   const handleQueryChange = (e) => {
+    setSearchForm(e.target.value);
+  };
+
+  const handleSearch = (e) => {
     e.preventDefault();
-    setQuery(e.target.value);
+    setQuery(searchForm);
+    setSearchForm("");
   };
 
   useEffect(() => {
     fetch(URL)
       .then((response) => response.json())
       .then((data) => setMovies(data.results));
-  });
+  }, [query, setMovies]);
 
   return (
     <div className="search-main-container">
-      <form className="movie-search-form" action="">
+      <form onSubmit={handleSearch} className="movie-search-form" action="">
         <div className="form-group">
           <label htmlFor="query"></label>
           <input
@@ -32,7 +38,7 @@ export default function Search() {
             className="form-text text-muted form-control"
             placeholder="Search movie.."
             onChange={handleQueryChange}
-            value={query}
+            value={searchForm}
           />
         </div>
       </form>

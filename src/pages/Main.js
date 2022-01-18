@@ -1,11 +1,13 @@
-import "../styles/Main.css";
-import { BASE_URL } from "../settings";
-import Card from "../components/Card";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../App";
+import Card from "../components/Card";
+import { BASE_URL } from "../settings";
+import "../styles/Main.css";
 
 export default function Main() {
+  const [pages, setPages] = useState({ current: 1, total: undefined });
   const { movies, setMovies } = useContext(GlobalContext);
+
   const URL = `${BASE_URL}/movie/popular?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&page=1`;
 
   useEffect(() => {

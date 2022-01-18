@@ -1,12 +1,9 @@
-import '../styles/Footer.css';
+import "../styles/Footer.css";
 
 export default function Footer() {
-  const date = new Date();
-  const year = date.getFullYear();
-
   return (
     <footer className="footer-bottom">
-      Martín Lupa {year}
+      Martín Lupa - Dec 2021
       <div className="footer-icons-container">
         <a href="https://www.linkedin.com/in/martin-lupa/">
           <i className="fab fa-linkedin"></i>
