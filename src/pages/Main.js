@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../App";
 import Card from "../components/Card";
-import Pagination from "../components/Pagination";
 import { BASE_URL } from "../settings";
 import "../styles/Main.css";
 
@@ -23,7 +22,7 @@ export default function Main() {
 
   return (
     <div className="main-container">
-      <Pagination pages={pages} setPages={setPages} />
+      {/* <Pagination pages={pages} setPages={setPages} /> */}
       <h2>Popular movies</h2>
       <div className="card-container">
         {movies?.map((movie) => (
