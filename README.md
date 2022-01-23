@@ -1,12 +1,13 @@
 # Movies World
 
+Deploy: https://react-spa-movies-world.vercel.app/
 Author: Martin I. Lupa Groppelli, December 2021.
 
 Movie search responsive React SPA, with watchlist and search functionalities.
 
 ## Repository
 
-https://github.com/MartinLupa/Movies-World-React-SPA
+https://github.com/MartinLupa/react-spa-movies-world
 
 ## How to use
 
