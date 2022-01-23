@@ -1,8 +1,8 @@
-import "../styles/Details.css";
-import { BASE_URL, IMG_PATH } from "../settings";
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import { GlobalContext } from "../App";
 import { useFetch } from "../hooks/useFetch";
+import { BASE_URL, IMG_PATH } from "../settings";
+import "../styles/Details.css";
 
 export default function Details() {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -10,7 +10,6 @@ export default function Details() {
 
   const handleAddWatchList = (e) => {
     const toWatchMovieID = parseInt(e.target.id);
-    console.log(typeof id, typeof toWatchMovieID);
     const movieToAdd = movies.filter((movie) => movie.id === toWatchMovieID);
     setWatchList((previousWatchlist) => [...previousWatchlist, movieToAdd[0]]);
   };

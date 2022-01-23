@@ -1,6 +1,6 @@
 {
-  "homepage": "http://MartinLupa.github.io/",
-  "name": "moviesworld",
+  "homepage": ".",
+  "name": "react-movies-world",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

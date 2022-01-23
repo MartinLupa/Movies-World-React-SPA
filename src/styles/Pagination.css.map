@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,mBAAmB,CAAC;EAClB,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,IAAI;CAQjB;;AAZD,AAKE,mBALiB,CAKjB,EAAE,CAAC;EACD,OAAO,EAAE,SAAS;EAClB,MAAM,EAAE,GAAG,CAAC,KAAK,CAAC,OAAkB;CACrC;;AARH,AASE,mBATiB,CASjB,OAAO,CAAC;EACN,gBAAgB,EAAE,OAAO;CAC1B",
+    "sources": [
+        "Pagination.scss",
+        "variables/Variables.scss"
+    ],
+    "names": [],
+    "file": "Pagination.css"
+}

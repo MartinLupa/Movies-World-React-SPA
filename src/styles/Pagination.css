@@ -1,0 +1,20 @@
+.pagination-buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+.pagination-buttons li {
+  padding: 20px 40px;
+  border: 1px solid #646464;
+}
+
+.pagination-buttons .active {
+  background-color: #d85d63;
+}
+/*# sourceMappingURL=Pagination.css.map */

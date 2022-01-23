@@ -8,6 +8,10 @@
   padding: 10px;
 }
 
+.card-img-top {
+  height: 450px !important;
+}
+
 .card-btn-container {
   display: -webkit-box;
   display: -ms-flexbox;

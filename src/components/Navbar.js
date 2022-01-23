@@ -1,6 +1,6 @@
-import '../styles/Navbar.css';
-import { NavLink } from 'react-router-dom';
-import UserLogIn from './UserLogIn';
+import { NavLink } from "react-router-dom";
+import "../styles/Navbar.css";
+import UserLogIn from "./UserLogIn";
 
 export default function Navbar() {
   return (
@@ -19,13 +19,21 @@ export default function Navbar() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0 navbar-nav-scroll">
           <li className="nav-item">
-            <NavLink className="nav-link active" aria-current="true" to="/">
+            <NavLink
+              className={(navData) =>
+                navData.isActive ? "active nav-link" : "nav-link"
+              }
+              aria-current="true"
+              to="/"
+            >
               Home
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
-              className="nav-link active"
+              className={(navData) =>
+                navData.isActive ? "active nav-link" : "nav-link"
+              }
               aria-current="true"
               to="/search"
             >
@@ -34,7 +42,9 @@ export default function Navbar() {
           </li>
           <li className="nav-item">
             <NavLink
-              className="nav-link active"
+              className={(navData) =>
+                navData.isActive ? "active nav-link" : "nav-link"
+              }
               aria-current="true"
               to="/watchlist"
             >
@@ -43,7 +53,9 @@ export default function Navbar() {
           </li>
           <li className="nav-item">
             <NavLink
-              className="nav-link active"
+              className={(navData) =>
+                navData.isActive ? "active nav-link" : "nav-link"
+              }
               aria-current="true"
               to="/contact"
             >

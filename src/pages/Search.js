@@ -9,7 +9,7 @@ export default function Search() {
   const [searchForm, setSearchForm] = useState("");
   const { movies, setMovies } = useContext(GlobalContext);
 
-  const URL = `${BASE_URL}/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
+  const SEARCH_URL = `${BASE_URL}/search/movie?api_key=${process.env.REACT_APP_MOVIEDB_KEY}&language=en-US&query=${query}&page=1&include_adult=false`;
 
   const handleQueryChange = (e) => {
     setSearchForm(e.target.value);
@@ -22,10 +22,10 @@ export default function Search() {
   };
 
   useEffect(() => {
-    fetch(URL)
+    fetch(SEARCH_URL)
       .then((response) => response.json())
       .then((data) => setMovies(data.results));
-  }, [query, setMovies]);
+  }, [query, setMovies, SEARCH_URL]);
 
   return (
     <div className="search-main-container">

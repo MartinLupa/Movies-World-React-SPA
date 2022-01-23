@@ -1,22 +1,21 @@
-import "../styles/Card.css";
-import { IMG_PATH } from "../settings";
 import { useContext } from "react";
-import { GlobalContext } from "../App";
 import { useLocation } from "react-router-dom";
-
-import DetailsBtn from "./DetailsBtn";
+import { GlobalContext } from "../App";
+import { DUMMY_IMAGE_URL, IMG_PATH } from "../settings";
+import "../styles/Card.css";
 import AddBtn from "./AddBtn";
 import DeleteBtn from "./DeleteBtn";
+import DetailsBtn from "./DetailsBtn";
 
 export default function Card({ url, title, overview, release, id }) {
   const { movieID, setMovieID, movies, setWatchList, watchList } =
     useContext(GlobalContext);
-
   const location = useLocation();
+  const src = url ? `${IMG_PATH}${url}` : DUMMY_IMAGE_URL;
 
   return (
     <div className="card">
-      <img src={IMG_PATH + url} className="card-img-top" alt={title}></img>
+      <img src={src} className="card-img-top" alt={title}></img>
       <div className="card-body">
         <h4 className="card-text">{title}</h4>
         <p className="card-text">{overview.slice(0, 220) + "..."}</p>

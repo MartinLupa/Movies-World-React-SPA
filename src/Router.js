@@ -1,13 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './pages/Main';
-import Details from './pages/Details';
-import WatchList from './pages/WatchList';
-import Search from './pages/Search';
-import Contact from './pages/Contact';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-
-import Error from './pages/Error';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Contact from "./pages/Contact";
+import Details from "./pages/Details";
+import Error from "./pages/Error";
+import Main from "./pages/Main";
+import Search from "./pages/Search";
+import WatchList from "./pages/WatchList";
 
 export default function Router() {
   return (

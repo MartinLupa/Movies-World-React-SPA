@@ -1,4 +1,4 @@
-@import './variables/Variables.scss';
+@import "./variables/Variables.scss";
 
 .card {
   background-color: $main-background-color;
@@ -7,6 +7,10 @@
   border: 1px solid rgb(27, 27, 27);
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
   padding: 10px;
+}
+
+.card-img-top {
+  height: 450px !important;
 }
 
 .card-btn-container {
